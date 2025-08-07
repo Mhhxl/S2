@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class ="container">
+        <h1>Filtro por idade</h1>
+        <form action="processa.php" method="post">
+            <label for="idade">Digite sua idade:</label>
+            <input type="number" id="idadeInput"placeholder ="Ex: 0" min="0" max="120" name="idade" required>
+            <button id="gerarBotao">Verificar</button>
+            
+            <div id=" Resultado:"></div>
+
+        </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
