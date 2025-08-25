@@ -1,0 +1,112 @@
+.App {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+  }
+  
+  .App.dark {
+    background-color: #333; /* Fundo escuro */
+    color: #f4f4f4; /* Texto claro */
+  }
+  
+  .App.dark h1 {
+    color: #f4f4f4; /* Texto do título no modo escuro */
+  }
+  
+  .App.dark h2 {
+    color: #ddd; /* Texto do subtítulo no modo escuro */
+  }
+  
+  .App.dark input[type="text"] {
+    background-color: #555; /* Fundo do input no modo escuro */
+    color: #f4f4f4; /* Texto do input no modo escuro */
+    border: 1px solid #777; /* Borda do input no modo escuro */
+  }
+  
+  .App.dark button {
+    background-color: #444; /* Fundo do botão no modo escuro */
+    color: #f4f4f4; /* Texto do botão no modo escuro */
+  }
+  
+  .App.dark button:hover {
+    background-color: #222; /* Fundo do botão ao passar o mouse no modo escuro */
+  }
+  
+  .App.dark hr {
+    border-color: #555; /* Cor da linha horizontal no modo escuro */
+  }
+  
+  .App.dark ol li {
+    border-bottom: 1px solid #555; /* Borda dos itens da lista no modo escuro */
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  hr {
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    width: 80%;
+  }
+  
+  ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    width: 80%;
+    margin-top: 10px;
+  }
+  
+  ol li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  ol li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Estilos adicionais podem ser adicionados conforme necessário */
+  
+  .logo {
+    height: 40vmin;
+    pointer-events: none;
+    width: 250px;
+    margin-bottom: -10px;
+  }
+  
