@@ -1,1 +1,67 @@
 /* src\pages\Servicos\style.css */
+.servicos {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0a3d62;
+  text-align: center;
+}
+
+.servicos h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.servicos p {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Grid de 3 colunas para os cards */
+.grid.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Cards */
+.servicos .card {
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(10, 61, 98, 0.1);
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  text-align: left;
+}
+
+.servicos .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(10, 61, 98, 0.2);
+}
+
+.servicos .card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #0a3d62;
+}
+
+.servicos .card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .servicos {
+    padding-bottom: 40px;
+  }
+}

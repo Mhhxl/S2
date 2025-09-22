@@ -1,6 +1,6 @@
 // src\components\Footer\index.jsx
 import './style.css'
-import { Navlink, link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 
 function Footer() {

@@ -13,7 +13,7 @@ function FaleConosco() {
             <p> Tire suas duvidas e peça um orçamento se compromisso.</p>
 
             <form className='form' onSubmit={handleSubmit}>
-                <div className='grid cols- 3'>
+                <div className='grid cols-3'>
                     <label className='field'>
                         <span> Nome: </span>
                         <input type="text" name='nome' placeholder='Seu nome'required />

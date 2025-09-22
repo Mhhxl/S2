@@ -1,28 +1,27 @@
-import header from './components/header'
+import { Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
 import Home from './pages/Home'
 import SobreNos from './pages/SobreNos'
 import Servicos from './pages/Servicos'
 import FaleConosco from './pages/FaleConosco'
-import footer from './components/footer'
+import Footer from './components/Footer'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-        <div className="App">
-          <header/>
+        <div className="app">
+          <Header/>
             <main className='container'>
               <Routes> 
-                <route path='/' element={<Home/>}/>
-                <route path='/SobreNos' element={<SobreNos/>}/>
-                <route path='/Servicos' element={<Servicos/>}/>
-                <route path='/FaleConosco' element={<FaleConosco/>}/>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/sobre-nos' element={<SobreNos/>}/>
+                <Route path='/servicos' element={<Servicos/>}/>
+                <Route path='/fale-conosco' element={<FaleConosco/>}/>
               </Routes>
             </main> 
-            <footer/>
+            <Footer/>
         </div>
     </>
   )

@@ -1,5 +1,8 @@
 // src\pages\Home\index.jsx
 import './style.css'
+import Hero from '../../assets/hero.png'
+import office from '../../assets/office.png'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -9,7 +12,7 @@ function Home() {
                     <h1> Contabilidade descomplicada para seu negócio </h1>
                     <p> Economize tempo e foque no que importa. Cuidamos da sua folha, impostos e obrigações com tecnologia e atendimento humano </p>
                     <div className='hero__cta'>
-                        <link to="/servicos" className=' btn primary'> Conheça nossos serviços</link>
+                        <Link to="/servicos" className=' btn primary'> Conheça nossos serviços</Link>
                     </div>
                 </div>
                 <div className='hero__img'>
