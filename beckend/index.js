@@ -2,65 +2,60 @@ const express = require('express');
 const cors = require('cors');
 const { Sequelize, DataTypes } = require('sequelize');
 
-
-// Configuração do Sequelize para conectar ao banco de dados MySQL.
-const sequelize = new Sequelize('db_aula_29_09', 'root', '', {
+// Criando conexão com o banco de dados MySQL.
+const sequelize = new Sequelize('db_aula', 'root', '', {
     host: 'localhost',
     dialect: 'mysql'
 });
 
-// Definição da tabela de Usuário.
+// Definindo o modelo para tabela no banco de dados.
 const Usuario = sequelize.define('Usuario', {
     nome: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING, // TIPO VARCHAR -> STRING -> TEXTO
+        allowNull: false // NOT NULL -> OBRIGATÓRIO -> NÃO PODE SER NULO OU VAZIO
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
-    },
-    telefone: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING, // TIPO VARCHAR -> STRING -> TEXTO
+        allowNull: false, // NOT NULL -> OBRIGATÓRIO -> NÃO PODE SER NULO OU VAZIO
+        unique: true // NÃO PODE REPETIR
     }
 });
 
-// Configuração do servidor Express.
-const app = express(); // Criação da aplicação Express.
-app.use(cors()); // Habilita CORS para permitir requisições do frontend.
-app.use(express.json()); // Middleware para parsear JSON no corpo das requisições.
-const port = 3000; // Porta onde o servidor irá escutar.
+const app = express(); // INICIALIZA O EXPRESS
+app.use(cors()); // PERMITE QUE API ACEITE CONEXÃO DO FRONT-END.
+app.use(express.json()); // HABILITA O EXPRESS PARA ENTENDER REQUISIÇÕES COM JSON;
 
-// Criando rotas da API.
-// Rota para listar todos os usuários.
+const port = 3000; // PORTA QUE A APLICAÇÃO VAI RODAR
+
+// ROTA DE TESTE
+app.get('/', (req, res) => {
+    res.send('API está funcionando!');
+});
+
+// ROTA PARA LISTAR TODOS OS USUÁRIOS
 app.get('/usuarios', async (req, res) => {
-    try {
-        const usuarios = await Usuario.findAll();
-        res.json(usuarios);
-    } catch (error) {
-        res.status(500).json({ mensagem: 'Erro ao buscar usuários' });
-    }
+    const usuarios = await Usuario.findAll();
+    res.json(usuarios);
 });
 
-// Rota para adicionar um novo usuário.
+// ROTA PARA CRIAR UM NOVO USUÁRIO
 app.post('/usuarios', async (req, res) => {
     try {
-        const { nome, email, telefone } = req.body;
-        const novoUsuario = await Usuario.create({ nome, email, telefone });
+        const { nome, email } = req.body;
+        const novoUsuario = await Usuario.create({ nome, email });
         res.status(201).json(novoUsuario);
     } catch (error) {
-        res.status(400).json({ mensagem: 'Verifique se o e-mail já existe.' });
+        res.status(400).json({ mensagem: "E-mail já cadastrado." });
     }
 });
 
-// Inicia o servidor após sincronizar criar tabela no banco de dados.
+// SINCRONIZA O MODELO COM O BANCO DE D
+// DOS E INICIA O SERVIDOR
 sequelize.sync().then(() => {
-    // Cria a tabela no banco de dados e inicia o servidor.
     app.listen(port, () => {
-        console.log(`Servidor rodando em http://localhost:${port}`); // Crase.
-        console.log('Banco de dados sincronizado.');
+        console.log(`🚀API rodando em http://localhost:${port}`);
+        console.log('🚀Conectado ao banco de dados MySQL.');
     });
 }).catch(err => {
-    console.error('Erro ao conectar ao banco de dados:', err);
+    console.error('Não foi possível conectar ao banco de dados:',);
 });
