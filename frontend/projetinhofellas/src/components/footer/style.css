@@ -1,0 +1,12 @@
+/* frontend\projetinhofellas\src\components\footer\style.css */
+* frontend\src\components\Footer\styles.css */
+
+.footer-container {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed; /* Fixa o footer no final da página */
+  bottom: 0;
+  width: 100%;
+}
