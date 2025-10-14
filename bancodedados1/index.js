@@ -179,3 +179,6 @@ sequelize.sync().then(() => {
 }).catch(err => {
     console.error('Não foi possível conectar ao banco de dados:',);
 });
+
+
+// creio q esse codigo esteja funcionando
