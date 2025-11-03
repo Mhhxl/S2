@@ -1,0 +1,118 @@
+/* ativ_fix\src\components\ListaClientes\style.css */
+/* ===== Container ===== */
+.lista-clientes-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===== Cabeçalho ===== */
+.lista-clientes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.lista-clientes-header h2 {
+  color: #2d3436;
+  font-size: 1.6rem;
+}
+
+.btn-atualizar {
+  background: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-atualizar:hover {
+  background: #74b9ff;
+  transform: translateY(-2px);
+}
+
+/* ===== Tabela ===== */
+.tabela-clientes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tabela-clientes th {
+  background: #0984e3;
+  color: white;
+  text-align: left;
+  padding: 0.9rem;
+  font-weight: 600;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.tabela-clientes td {
+  padding: 0.9rem;
+  border-bottom: 1px solid #dfe6e9;
+  color: #2d3436;
+}
+
+.tabela-clientes tr:hover td {
+  background: #f1f2f6;
+}
+
+/* ===== Mensagem de Status ===== */
+.mensagem-status {
+  text-align: center;
+  color: #636e72;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* ===== Animação ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .tabela-clientes thead {
+    display: none;
+  }
+
+  .tabela-clientes tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .tabela-clientes td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border: none;
+    border-bottom: 1px solid #dfe6e9;
+  }
+
+  .tabela-clientes td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #2d3436;
+  }
+}

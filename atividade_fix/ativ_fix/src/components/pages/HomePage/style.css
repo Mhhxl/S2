@@ -1,0 +1,59 @@
+/* ativ_fix\src\components\HomePage\style.css */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f7f8fa;
+  font-family: Arial, sans-serif;
+}
+
+.homepage-header {
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+  padding: 2rem;
+}
+
+.homepage-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 3rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.btn {
+  display: inline-block;
+  background: #3498db;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+.homepage-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem;
+  background: #2c3e50;
+  color: white;
+}
